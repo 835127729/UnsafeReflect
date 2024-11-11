@@ -201,7 +201,7 @@ class TestUnsafeReflectViewModel : ViewModel() {
             "inflate",
             arrayOf(Context::class.java, Int::class.java, ViewGroup::class.java),
             context,
-            androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+            R.layout.test,
             null
         ) as View?
         if (root == null) {
@@ -276,6 +276,8 @@ class TestUnsafeReflectViewModel : ViewModel() {
             return@runCatching false
         }
         true
+    }.onFailure {
+        Log.e(TAG, "testReflectMethod: ", it)
     }.getOrDefault(false)
 
     @SuppressLint("SoonBlockedPrivateApi", "PrivateApi")

@@ -7,7 +7,7 @@ import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 
 
-interface UnsafeReflectApi {
+private interface UnsafeReflectApi {
     //Retrieve all constructor methods of the specified class, including private constructor methods
     fun getConstructors(targetClass: Class<*>): List<Constructor<*>>
 

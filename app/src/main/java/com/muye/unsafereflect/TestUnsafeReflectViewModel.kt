@@ -167,6 +167,16 @@ class TestUnsafeReflectViewModel : ViewModel() {
 
     fun testReflectMethod(context: Context): Boolean = kotlin.runCatching {
         //constructor
+        if (UnsafeReflect.getConstructors(View::class.java).isEmpty()) {
+            Log.w(TAG, "getConstructors() is empty")
+            return@runCatching false
+        }
+
+        if (UnsafeReflect.getConstructor(View::class.java, arrayOf(Context::class.java)) == null) {
+            Log.w(TAG, "getConstructor() is null")
+            return@runCatching false
+        }
+
         val view =
             UnsafeReflect.newInstance(View::class.java, arrayOf(Context::class.java), context)
         if (view == null) {

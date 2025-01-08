@@ -24,7 +24,7 @@
 
 ## 三、快速开始
 
-你可以参考[app](https://github.com/835127729/MapsVisitor/tree/main/app)中的示例。
+你可以参考[app](https://github.com/835127729/UnsafeReflect/tree/main/app)中的示例。
 
 ### 1、在 build.gradle.kts 中增加依赖
 
